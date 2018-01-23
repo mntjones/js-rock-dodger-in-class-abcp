@@ -66,7 +66,7 @@ function endGame() {
 
   ROCKS.forEach(function(rock) { rock.remove() })
 
-  document.removeEventListener('keydown', moveDodger)
+  window.removeEventListener('keydown', moveDodger)
 
   START.innerHTML = 'Play again?'
   START.style.display = 'inline'
@@ -82,9 +82,12 @@ function moveDodger(e) {
     e.stopPropagation()
   }
 
+// left arrow = 37
   if (code === LEFT_ARROW) {
     moveDodgerLeft()
-  } else if (code === RIGHT_ARROW) {
+  } 
+  // right arrow =39
+  else if (code === RIGHT_ARROW) {
     moveDodgerRight()
   }
 }
